@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Poop Shape</title>
+  <style>
+    .container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .poop {
+      position: relative;
+      width: 120px;
+      height: 80px;
+      background: #5b3a29;
+      border-radius: 60px 60px 40px 40px;
+      margin: 100px auto;
+      transition: all 2s linear;
+    }
+
+    .poop:hover{
+        transform: scale(2);
+    }
+
+    .poop::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 20px;
+      width: 80px;
+      height: 60px;
+      background: #5b3a29;
+      border-radius: 50%;
+    }
+
+    .poop::after {
+      content: "";
+      position: absolute;
+      top: -70px;
+      left: 35px;
+      width: 50px;
+      height: 50px;
+      background: #5b3a29;
+      border-radius: 50%;
+    }
+
+    .eyes {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      display: flex;
+      gap: 30px;
+    }
+
+    .eye {
+      width: 15px;
+      height: 15px;
+      background: white;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .eye::after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: black;
+      border-radius: 50%;
+      top: 5px;
+      left: 5px;
+    }
+
+    .smile {
+      position: absolute;
+      bottom: 10px;
+      left: 40px;
+      width: 40px;
+      height: 20px;
+      border-bottom: 3px solid white;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="poop">
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye"></div>
+    </div>
+    <div class="smile"></div>
+  </div>
+    </div>
+
+  
+
+</body>
+</html>
