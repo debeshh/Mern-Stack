@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Listeners</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cont {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            padding: 60px;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+        }
+
+        p {
+            font-size: 40px;
+            color: white;
+        }
+
+        button {
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 1, 1);
+            height: 40px;
+            width: 90px;
+            border: 1px solid rgb(197, 197, 255);
+            /* border-left: 20px solid rgb(255, 211, 36); */
+            border-radius: 20px;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            transition-duration: 3ms;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cont">
+
+
+        <p id="fpara">First Para</p>
+        <p id="spara">Second Para</p>
+        <p id="tpara">Third Para</p>
+        <p id="fopara">Fourth Para</p>
+
+
+        <p id="para">Click Me Daddy !</p>
+
+        <button>Click me</button>
+    </div>
+
+
+
+    <script src="events.js"></script>
+</body>
+
+</html>
