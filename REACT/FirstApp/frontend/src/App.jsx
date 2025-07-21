@@ -29,7 +29,7 @@ const App = () => {
 
 
   //conditional rendering
-  const [isLoggedIn,setIsLoggedIn] = useState(true);
+  // const [isLoggedIn,setIsLoggedIn] = useState(true);
 
   // if(isLoggedIn){
   //   return (
@@ -43,16 +43,53 @@ const App = () => {
   // }
 
 
+  // return (
+  //   <div>
+  //     {isLoggedIn ? <Logout/> : <Login/>}
+  //   </div>
+  // )
+  function handleClick(){
+    alert("I M CLICKED")
+  }
+
+  function handleMouseOver(){
+    alert("para ke upar mouse lekr aaye ho!")
+  }
+
+
+  function handleOnChange(e){
+    // console.log("Input mein text chnage huii hai")
+    console.log("Input mein text chnage huii hai: ", e.target.value)
+  }
+
+  function handleOnSubmit(e){
+    // e.default.vale = "";
+    e.preventDefault();
+    alert("Form submit kar dun kya?");
+
+  }
+
   return (
     <div>
-      {isLoggedIn ? <Logout/> : <Login/>}
-    </div>
-  )
 
-  
+      <button onClick={()=>alert("buttonclicke dme")}>click me</button>
 
-  return (
-    <div>
+
+      {/* <form onSubmit={handleOnSubmit}>
+        <input type="text" name="" id="" onChange={handleOnChange}/>
+        <button type="submit" >submit</button>
+      </form> */}
+
+      {/* <p onMouseOver={handleMouseOver} style={{color:"red",border:"1px solid white"}}>
+        I am a Para
+      </p>
+
+    <button onClick={handleClick}>
+      click me
+    </button> */}
+
+
+    
 
     {/* <Card2 name={name} setName={setName}/>
     <p>I am inside Parent Component and value of name is {name}</p> */}
