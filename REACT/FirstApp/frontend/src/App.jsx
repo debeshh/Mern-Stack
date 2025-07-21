@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
-import Logout from './components/Logout';
-import Login from './components/Login';
+import DataFetcher from './components/DataFetcher';
+// import Timer from './components/Timer';
+// import Logout from './components/Logout';
+// import Login from './components/Login';
 // import Card2 from './components/Card2'
 // import Navbar from './components/Navbar'
 // import UserCard from './components/UserCard'
@@ -10,6 +12,83 @@ import Login from './components/Login';
 // import Button from './components/Button'
 
 const App = () => {
+
+  const [count,setCount] = useState(0);
+  const [total,setTotal] = useState(1);
+  //first -> sideEffect logic
+  //second -> clean-up function
+  //third -> comma separated dep list.  main thing whenever update it will run the first
+
+  
+  
+  
+  
+  // variation:1
+  // runs on every render
+
+
+  // useEffect(()=>{
+  //   alert("I will join on every render")
+  // },)
+
+
+
+
+
+
+  // variation:2
+  // runs on only first render
+
+  // useEffect(()=>{
+  //   alert("I will return on only first render")
+  // },[])
+
+
+
+
+
+
+  // variation 3
+  // i wll run every time when count is rendered.
+  // useEffect(()=>{
+  //   alert("i will render every time when count is updated")
+  // },[count])
+
+
+
+
+
+
+  // variation 4
+  // multiplle dependencies
+  // useEffect(()=>{
+  //   alert("i will render whenever count and total is updated")
+  // },[count ,total])
+
+
+
+
+
+
+
+
+  // variation 5
+  // use cleanup function.
+
+  // useEffect(()=>{
+  //   alert("Count is updated")
+  //   return ()=>{
+  //     alert("count is unmounted from UI")
+  //   }
+  // },[count])
+
+
+
+
+
+
+
+
   // const [count,setCount] = useState(0);
 
   // function handleClick(){
@@ -48,32 +127,48 @@ const App = () => {
   //     {isLoggedIn ? <Logout/> : <Login/>}
   //   </div>
   // )
-  function handleClick(){
-    alert("I M CLICKED")
-  }
+  // function handleClick(){
+  //   alert("I M CLICKED")
+  // }
 
-  function handleMouseOver(){
-    alert("para ke upar mouse lekr aaye ho!")
-  }
+  // function handleMouseOver(){
+  //   alert("para ke upar mouse lekr aaye ho!")
+  // }
 
 
-  function handleOnChange(e){
-    // console.log("Input mein text chnage huii hai")
-    console.log("Input mein text chnage huii hai: ", e.target.value)
-  }
+  // function handleOnChange(e){
+  //   // console.log("Input mein text chnage huii hai")
+  //   console.log("Input mein text chnage huii hai: ", e.target.value)
+  // }
 
-  function handleOnSubmit(e){
-    // e.default.vale = "";
-    e.preventDefault();
-    alert("Form submit kar dun kya?");
+  // function handleOnSubmit(e){
+  //   // e.default.vale = "";
+  //   e.preventDefault();
+  //   alert("Form submit kar dun kya?");
 
-  }
+  // }
 
   return (
     <div>
 
-      <button onClick={()=>alert("buttonclicke dme")}>click me</button>
 
+      {/* <DataFetcher/> */}
+       {/* <Timer/> */}
+       {/* <button onClick={()=>{
+        setCount(count+1)
+       }}>Update count</button>
+       <br />
+       Count is: {count}
+       <br />
+       <button onClick={()=>{
+        setTotal(total+1)
+       }}>Update total</button>
+       <br />
+       Total is: {total} */}
+
+
+
+      {/* <button onClick={()=>alert("buttonclicke dme")}>click me</button> */}
 
       {/* <form onSubmit={handleOnSubmit}>
         <input type="text" name="" id="" onChange={handleOnChange}/>
