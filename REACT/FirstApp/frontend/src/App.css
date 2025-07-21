@@ -7,3 +7,14 @@ p{
   align-items: center;
   width: 100%;
 }
+
+#container{
+  height:100px;
+  width: 200px;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(152, 152, 152);
+}

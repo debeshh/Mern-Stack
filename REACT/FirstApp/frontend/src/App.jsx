@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import './App.css'
-import DataFetcher from './components/DataFetcher';
+import ChildA from './components/ChildA';
+// import ChildA from './components/ChildA';
+// import DataFetcher from './components/DataFetcher';
 // import Timer from './components/Timer';
 // import Logout from './components/Logout';
 // import Login from './components/Login';
@@ -11,10 +13,31 @@ import DataFetcher from './components/DataFetcher';
 // import Card from './components/Card'
 // import Button from './components/Button'
 
+//step 1 Create UseContext()
+// const UserContext = createContext();
+//step 2 -> wrap all the child inside a Provider
+
+//step 3 -> pass value
+
+
+//step 4 -> consumer ke andar jake consume karlo
+
+
+const ThemeContext = createContext();
+
+
+
 const App = () => {
 
-  const [count,setCount] = useState(0);
-  const [total,setTotal] = useState(1);
+
+
+  const [theme,setTheme] = useState('light');
+
+
+  // const [user,setUser] = useState({name:"Debesh"});
+
+  // const [count,setCount] = useState(0);
+  // const [total,setTotal] = useState(1);
   //first -> sideEffect logic
   //second -> clean-up function
   //third -> comma separated dep list.  main thing whenever update it will run the first
@@ -148,8 +171,29 @@ const App = () => {
 
   // }
 
+
   return (
     <div>
+
+
+
+      <ThemeContext.Provider value={{theme,setTheme}}>
+        <div id='container' style={{backgroundColor: theme === 'light' ? "beige" : "black"}}>
+          <ChildA/>
+        </div>
+        
+      </ThemeContext.Provider>
+{/* 
+    <UserContext.Provider value={user}>
+      <ChildA/>
+    </UserContext.Provider> */}
+
+     
+
+
+      
+
+
 
 
       {/* <DataFetcher/> */}
@@ -212,4 +256,6 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
+// export {UserContext};
+export {ThemeContext};
